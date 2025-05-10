@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Noto_Serif } from "next/font/google";
+import { Noto_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
-const geist = Noto_Serif({
+const notoSerif = Noto_Serif({
   subsets: ["latin"],
+  variable: "--font-noto",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -17,8 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geist.className} antialised`}>{children}</body>
+    <html lang="pt-BR">
+      <body className={`${notoSerif.variable} ${inter.variable} antialised`}>
+        {children}
+      </body>
     </html>
   );
 }
