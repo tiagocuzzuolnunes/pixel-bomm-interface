@@ -30,7 +30,6 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import { useState } from "react";
 
@@ -50,6 +49,23 @@ export function AppSidebar() {
       id: 3,
       name: "Documentos",
       icon: FileCheck,
+    },
+  ];
+  const filiais = [
+    {
+      name: "Filial A",
+      cd: "FA",
+      id: 1,
+    },
+    {
+      name: "Filial B",
+      cd: "FB",
+      id: 2,
+    },
+    {
+      name: "Filial C",
+      cd: "FC",
+      id: 3,
     },
   ];
   const [isSelected, setIsSelected] = useState<number | null>(null);
@@ -81,18 +97,14 @@ export function AppSidebar() {
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-[--radix-popper-anchor-width]">
-                <DropdownMenuItem>
-                  <Avatar>
-                    <AvatarFallback>FA</AvatarFallback>
-                  </Avatar>
-                  <span>Filial A</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <span>Filial B</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <span>Filial C</span>
-                </DropdownMenuItem>
+                {filiais.map((filial) => (
+                  <DropdownMenuItem key={filial.id}>
+                    <Label className="flex justify-center items-center rounded-lg font-medium bg-accent w-8 h-8">
+                      <span className="bg-accent font-medium">{filial.cd}</span>
+                    </Label>
+                    <span>{filial.name}</span>
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>
