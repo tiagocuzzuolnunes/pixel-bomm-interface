@@ -3,6 +3,7 @@ import { Noto_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/app/components/AppSidebar";
+import Header from "./components/Header";
 
 const notoSerif = Noto_Serif({
   subsets: ["latin"],
@@ -29,10 +30,9 @@ export default function RootLayout({
       <body className={`${notoSerif.variable} ${inter.variable} antialised`}>
         <SidebarProvider>
           <AppSidebar />
-          <main>
-            <SidebarTrigger />
-            {children}
-          </main>
+          <SidebarTrigger />
+          <Header />
+          <main>{children}</main>
         </SidebarProvider>
       </body>
     </html>

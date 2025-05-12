@@ -1,9 +1,3 @@
-import Header from "@/app/components/Header";
-
 export default function Home() {
-  return (
-    <>
-      <Header />
-    </>
-  );
+  return <h1>A</h1>;
 }
