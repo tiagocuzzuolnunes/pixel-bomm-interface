@@ -1,4 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Dialog } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-export default function PageContent() {}
+import { Plus } from "lucide-react";
+import PageContentCard from "./PageContentCard";
+export default function PageContent() {
+  return (
+    <section className="flex flex-col flex-1 p-10">
+      <div className="flex flex-1 pb-5 justify-between">
+        <h1 className="font-serif text-4xl">Usuários</h1>
+        <Button className="bg-base-primary h-10 rounded-4xl">
+          <Plus />
+          Adicionar
+        </Button>
+      </div>
+      <div className="flex flex-1 justify-between gap-5 py-5">
+        <PageContentCard header="Usuários" content="294" />
+        <PageContentCard header="Tempo de Sessão" content="31m20s" />
+        <PageContentCard header="Ativos" content="203" />
+        <PageContentCard header="Inativos" content="127" />
+      </div>
+    </section>
+  );
+}
