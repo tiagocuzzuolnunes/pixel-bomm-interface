@@ -15,7 +15,7 @@ export default function HelpButton() {
         <Button
           variant="outline"
           size="icon"
-          className="text-secondary-foreground rounded-full"
+          className="text-secondary-foreground rounded-full w-10 h-10 cursor-pointer"
         >
           <HelpCircle className="h-5 w-5 text-primary" />
         </Button>

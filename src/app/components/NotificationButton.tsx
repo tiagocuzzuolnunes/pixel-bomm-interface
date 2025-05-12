@@ -12,7 +12,7 @@ export default function HelpButton() {
     <Button
       variant="outline"
       size="icon"
-      className="text-secondary-foreground rounded-full"
+      className="text-secondary-foreground rounded-full w-10 h-10 cursor-pointer"
       onClick={handleChange}
     >
       {notification ? (

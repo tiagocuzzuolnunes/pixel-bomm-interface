@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif, Inter } from "next/font/google";
 import "./globals.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/app/components/AppSidebar";
 import Header from "./components/Header";
 
@@ -30,9 +30,10 @@ export default function RootLayout({
       <body className={`${notoSerif.variable} ${inter.variable} antialised`}>
         <SidebarProvider>
           <AppSidebar />
-          <SidebarTrigger />
-          <Header />
-          <main>{children}</main>
+          <div className="flex flex-col flex-1">
+            <Header />
+            <main>{children}</main>
+          </div>
         </SidebarProvider>
       </body>
     </html>

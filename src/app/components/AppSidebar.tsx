@@ -80,7 +80,7 @@ export function AppSidebar() {
   };
   return (
     <Sidebar>
-      <SidebarHeader className="flex justify-center border-b-2 px-6">
+      <SidebarHeader className="flex justify-center border-b-1 px-6">
         <Button className="w-24">Logo</Button>
       </SidebarHeader>
       <SidebarContent className="p-4">
