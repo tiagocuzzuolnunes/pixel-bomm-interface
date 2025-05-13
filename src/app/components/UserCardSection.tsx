@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Calendar } from "lucide-react";
 import { User } from "lucide-react";
 import { Clock3 } from "lucide-react";
@@ -15,82 +15,38 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 import { Badge } from "@/components/ui/badge";
 import EllipsisButton from "./EllipsisButton";
+import { api } from "../../lib/axios";
+
+interface User {
+  id: number;
+  name: string;
+  code: string;
+  age: number;
+  gender: string;
+  date: string;
+  hour: string;
+  time: string;
+  userType: string;
+  userActive: boolean;
+}
 
 export default function UserCardSection() {
-  const users = [
-    {
-      id: 1,
-      name: "José Ricardo Gomes",
-      code: "JG",
-      age: 51,
-      gender: "Homem",
-      date: "22/03/2025",
-      hour: "10:21am",
-      time: "38m22s",
-      userType: "padrão",
-    },
-    {
-      id: 2,
-      name: "José Ricardo Gomes",
-      code: "JG",
-      age: 51,
-      gender: "Homem",
-      date: "22/03/2025",
-      hour: "10:21am",
-      time: "38m22s",
-      userType: "padrão",
-    },
-    {
-      id: 3,
-      name: "José Ricardo Gomes",
-      code: "JG",
-      age: 51,
-      gender: "Homem",
-      date: "22/03/2025",
-      hour: "10:21am",
-      time: "38m22s",
-      userType: "padrão",
-    },
-    {
-      id: 4,
-      name: "José Ricardo Gomes",
-      code: "JG",
-      age: 51,
-      gender: "Homem",
-      date: "22/03/2025",
-      hour: "10:21am",
-      time: "38m22s",
-      userType: "padrão",
-    },
-    {
-      id: 5,
-      name: "José Ricardo Gomes",
-      code: "JG",
-      age: 51,
-      gender: "Homem",
-      date: "22/03/2025",
-      hour: "10:21am",
-      time: "38m22s",
-      userType: "padrão",
-    },
-    {
-      id: 6,
-      name: "José Ricardo Gomes",
-      code: "JG",
-      age: 51,
-      gender: "Homem",
-      date: "22/03/2025",
-      hour: "10:21am",
-      time: "38m22s",
-      userType: "padrão",
-    },
-  ];
-  const [userActive, setUserActive] = useState(false);
+  const [users, setUsers] = useState<User[]>([]);
+  useEffect(() => {
+    api
+      .get("/users")
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((err) => {
+        console.log("Algo deu errado", err);
+      });
+  }, []);
   return (
     <div>
-      {users.map((user, index) => (
+      {users.map((user) => (
         <Card
-          key={index}
+          key={user.id}
           className="flex flex-row justify-start gap-3 p-3 mb-2"
         >
           <Avatar className="size-14">
@@ -122,7 +78,7 @@ export default function UserCardSection() {
               </CardDescription>
             </div>
             <div className="flex items-center">
-              {userActive ? (
+              {user.userActive ? (
                 <Badge variant="secondary" className="text-primary rounded-4xl">
                   Ativo
                 </Badge>

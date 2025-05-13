@@ -1,0 +1,128 @@
+{
+  "filiais": [
+    {
+      "id": 1,
+      "name": "Filial A",
+      "code": "FA"
+    },
+    {
+      "id": 2,
+      "name": "Filial B",
+      "code": "FB"
+    },
+    {
+      "id": 3,
+      "name": "Filial C",
+      "code": "FC"
+    }
+  ],
+
+  "sidebarSections": [
+    {
+      "subsectionOne": {
+        "title": "Menu",
+        "items": [
+          {
+            "id": 1,
+            "name": "Dashboard",
+            "icon": "Activity"
+          },
+          {
+            "id": 2,
+            "name": "Usuários",
+            "icon": "User"
+          },
+          {
+            "id": 3,
+            "name": "Documentos",
+            "icon": "FileCheck"
+          }
+        ]
+      },
+      "subsectionTwo": {
+        "title": "Configurações",
+        "items": [
+          {
+            "id": 1,
+            "name": "Geral",
+            "icon": "Settings"
+          }
+        ]
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "José Ricardo Gomes",
+      "code": "JG",
+      "age": 51,
+      "gender": "Homem",
+      "date": "22/03/2025",
+      "hour": "10:21am",
+      "time": "38m22s",
+      "userType": "padrão",
+      "userActive": true
+    },
+    {
+      "id": 2,
+      "name": "Helena Soares",
+      "code": "HS",
+      "age": 46,
+      "gender": "Mulher",
+      "date": "22/03/2025",
+      "hour": "10:21am",
+      "time": "38m22s",
+      "userType": "padrão",
+      "userActive": true
+    },
+    {
+      "id": 3,
+      "name": "Débora Santana",
+      "code": "DS",
+      "age": 24,
+      "gender": "Mulher",
+      "date": "22/03/2025",
+      "hour": "10:21am",
+      "time": "38m22s",
+      "userType": "padrão",
+      "userActive": true
+    },
+    {
+      "id": 4,
+      "name": "Lucas Rocha Silveira",
+      "code": "LS",
+      "age": 31,
+      "gender": "Homem",
+      "date": "22/03/2025",
+      "hour": "10:21am",
+      "time": "38m22s",
+      "userType": "padrão",
+      "userActive": true
+    },
+    {
+      "id": 5,
+      "name": "Sérgio Arantes",
+      "code": "SA",
+      "age": 36,
+      "gender": "Homem",
+      "date": "22/03/2025",
+      "hour": "10:21am",
+      "time": "38m22s",
+      "userType": "padrão",
+      "userActive": false
+    },
+    {
+      "id": 6,
+      "name": "Adriano Costa",
+      "code": "AC",
+      "age": 38,
+      "gender": "Homem",
+      "date": "22/03/2025",
+      "hour": "10:21am",
+      "time": "38m22s",
+      "userType": "padrão",
+      "userActive": true
+    }
+  ]
+}
