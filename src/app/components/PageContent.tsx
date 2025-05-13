@@ -2,6 +2,7 @@ import PageContentCard from "./PageContentCard";
 import SearchInput from "./SearchInput";
 import ModalUser from "./ModalUser";
 import UserCardSection from "./UserCardSection";
+import PageContentFooter from "./PageContentFooter";
 export default function PageContent() {
   return (
     <section className="flex flex-col flex-1 p-10">
@@ -26,6 +27,9 @@ export default function PageContent() {
       </div>
       <div>
         <UserCardSection />
+      </div>
+      <div>
+        <PageContentFooter />
       </div>
     </section>
   );
