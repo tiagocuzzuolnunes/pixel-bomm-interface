@@ -1,6 +1,7 @@
 import PageContentCard from "./PageContentCard";
 import SearchInput from "./SearchInput";
 import ModalUser from "./ModalUser";
+import UserCardSection from "./UserCardSection";
 export default function PageContent() {
   return (
     <section className="flex flex-col flex-1 p-10">
@@ -20,10 +21,12 @@ export default function PageContent() {
         <PageContentCard header="Ativos" content="203" />
         <PageContentCard header="Inativos" content="127" />
       </div>
-      <div>
+      <div className="mb-5">
         <SearchInput />
       </div>
-      <div></div>
+      <div>
+        <UserCardSection />
+      </div>
     </section>
   );
 }

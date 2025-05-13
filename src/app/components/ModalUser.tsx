@@ -7,18 +7,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
-
+import StatusCard from "./StatusCard";
+import ModalInput from "./ModalInput";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DialogClose } from "@radix-ui/react-dialog";
@@ -37,113 +27,59 @@ export default function ModalUser() {
             </DialogTitle>
           </DialogHeader>
           <div>
-            <div>
-              <Label htmlFor="name" className="text-right mb-2">
-                Nome Completo
-              </Label>
-              <Input
-                id="name"
-                className="mb-5"
-                //   value={name}
-                //   onChange={(e) => setName(e.target.value)}
+            <ModalInput
+              label="Nome Completo"
+              id="name"
+              type="text"
+              placeholder="Digite o nome"
+              checkbox={false}
+            />
+            <ModalInput
+              label="E-mail"
+              id="email"
+              type="email"
+              placeholder="Digite o e-mail"
+              checkbox={false}
+            />
+            <ModalInput
+              label="Telefone"
+              id="phone"
+              type="tel"
+              placeholder="Informe o telefone"
+              checkbox={true}
+              checkboxId="whatsapp"
+              checkboxText="Whatsapp"
+            />
 
-                placeholder="Digite o nome"
-              />
-            </div>
-            <div>
-              <Label htmlFor="email" className="text-right mb-2">
-                E-mail
-              </Label>
-              <Input
-                id="email"
-                className="mb-5"
-                //   value={name}
-                //   onChange={(e) => setName(e.target.value)}
-
-                placeholder="Digite o e-mail"
-                type="email"
-              />
-            </div>
-            <div className="mb-5">
-              <Label htmlFor="phone" className="text-right mb-2">
-                Telefone
-              </Label>
-              <Input
-                id="phone"
-                //   value={name}
-                //   onChange={(e) => setName(e.target.value)}
-                className="mb-2"
-                placeholder="Informe o telefone"
-                type="tel"
-              />
-              <Checkbox id="whatsapp" />
-              <label
-                htmlFor="whatsapp"
-                className="text-sm ml-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Whatsapp
-              </label>
-            </div>
             <div className="flex flex-1 flex-nowrap gap-4 mb-5">
-              <div className="w-[calc(150%-2rem)]">
-                <Label htmlFor="cpf" className="text-right mb-2">
-                  CPF
-                </Label>
-                <Input
-                  id="cpf"
-                  //   value={name}
-                  //   onChange={(e) => setName(e.target.value)}
-                  className="mb-2 "
-                  placeholder="Informe o CPF"
-                  type="tel"
-                />
-              </div>
-              <div className="w-[calc(150%-2rem)]">
-                <Label htmlFor="rg" className="text-right mb-2">
-                  RG
-                </Label>
-                <Input
-                  id="rg"
-                  //   value={name}
-                  //   onChange={(e) => setName(e.target.value)}
-                  className="mb-2 "
-                  placeholder="Informe o RG"
-                  type="tel"
-                />
-              </div>
-            </div>
-            <div>
-              <Label htmlFor="email" className="text-right mb-2">
-                E-mail
-              </Label>
-              <Input
-                id="email"
-                className="mb-5"
-                //   value={name}
-                //   onChange={(e) => setName(e.target.value)}
-
-                placeholder="Digite o e-mail"
-                type="email"
+              <ModalInput
+                inputHalf={true}
+                label="CPF"
+                id="cpf"
+                type="text"
+                placeholder="Informe o CPF"
+                checkbox={false}
+              />
+              <ModalInput
+                inputHalf={true}
+                label="RG"
+                id="rg"
+                type="text"
+                placeholder="Informe o RG"
+                checkbox={false}
               />
             </div>
-            <Card className="p-4 flex flex-1 justify-center bg-primary-foreground">
-              <CardContent className="flex flex-1 p-0">
-                <CardHeader className="w-4/5 p-0">
-                  <CardTitle>Status</CardTitle>
-                  <CardDescription>
-                    Defina se o usuário estará ativo ao ser adicionado.
-                  </CardDescription>
-                </CardHeader>
-                <div className="flex items-center w-20 text-sm gap-2 font-medium">
-                  <Switch />
-                  Ativo
-                </div>
-              </CardContent>
-            </Card>
+            <ModalInput
+              label="E-mail"
+              id="email"
+              type="email"
+              placeholder="Digite o e-mail"
+              checkbox={false}
+            />
           </div>
+          <StatusCard />
         </div>
-
-        <DialogFooter className="">
+        <DialogFooter>
           <DialogClose>
             <Button
               variant="outline"
